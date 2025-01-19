@@ -28,7 +28,7 @@ const Hero = () => {
             Front-End Developer | Full-Stack Enthusiast
           </p>
         </div>
-        {/* <div className="mt-14 flex gap-10 text-[16px] font-bold  text-[#e4ded7] sm:gap-14 sm:text-[24px] md:gap-10 md:text-[16px] lg:gap-20 lg:text-[28px]">
+        <div className="mt-14 flex gap-10 text-[16px] font-bold  text-[#e4ded7] sm:gap-14 sm:text-[24px] md:gap-10 md:text-[16px] lg:gap-20 lg:text-[28px]">
           <Link
             href="https://github.com/Bodyhc"
             target="_blank"
@@ -68,7 +68,7 @@ const Hero = () => {
               charSpace={"mr-[0.01em]"}
             />
           </Link>
-        </div> */}
+        </div>
       </div>
     </motion.section>
   );

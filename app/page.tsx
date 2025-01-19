@@ -49,6 +49,7 @@ export default function Home() {
 
     return (
         <>
+            <header />
             <PreLoader />
             <Blur />
             <Color />
@@ -59,7 +60,7 @@ export default function Home() {
                 <Work />
                 <Tools />
                 <Contact />
-                
+
                 <Footer />
             </main>
         </>
