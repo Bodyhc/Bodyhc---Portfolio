@@ -49,6 +49,7 @@ export default function Home() {
 
     return (
         <>
+            <script defer src="https://cloud.umami.is/script.js" data-website-id="9b248b67-1e8e-4852-a1de-b647a7047a3e"></script>
             <header />
             <PreLoader />
             <Blur />
