@@ -48,6 +48,47 @@ export const projects = [
   },
   {
     id: 1,
+    name: "Voltix Setup Tool",
+    description:
+      "Setup Tool is a comprehensive web application designed to help developers create and manage project templates efficiently. It provides a user-friendly interface for creating, customizing, and deploying project templates with ease.",
+    technologies: [SiTypescript ,SiTailwindcss ,SiReact ,SiNextdotjs  ,SiFramer],
+    techNames: ["Typescript" , "Tailwindcss" , "React" , "Next.js" ,"Radix UI" , "Framer Motion" ],
+    techLinks: [
+      "https://www.typescriptlang.org/",
+      "https://tailwindcss.com/",
+      "https://react.dev/",
+      "https://nextjs.org/",
+      "https://www.radix-ui.com/",
+      "https://www.framer.com/", 
+      
+    ],
+    github: "https://github.com/Bodyhc/Voltix-Setup-Tool",
+    demo: "https://voltixtool.netlify.app/",
+    image: "/projects/voltix.png",
+    available: true,
+  },
+  {
+    id: 2,
+    name: "CV AI Analyzer",
+    description:
+      "This project is a modern web application designed to simplify the recruitment process. It allows users to upload multiple resumes (CVs) and automatically extracts key skills from each document",
+    technologies: [SiReact, SiTypescript, SiTailwindcss, SiVite],
+    techNames: ["react ", "typescript","Tailwind CSS","Vite"],
+    techLinks: [
+      "https://react.dev/",
+      "https://www.typescriptlang.org/",
+      "https://tailwindcss.com/",
+            "https://vite.dev/"
+
+
+    ],
+    github: "https://github.com/Bodyhc/dark-mode-library.git",
+    demo: "https://cvanalyzerai.netlify.app/",
+    image: "/projects/cv.png",
+    available: true,
+  },
+  {
+    id: 3,
     name: "Laravel Security Scanner",
     description:
       "This project enhances the security of Laravel applications by introducing a middleware that detects and prevents SQL Injection, XSS, and CSRF attacks.",
@@ -64,7 +105,7 @@ export const projects = [
   },
 
   {
-    id: 2,
+    id: 4,
     name: "SHOP BO",
     description: "FIND CLOTHES THAT MATCHES YOUR STYLE",
     technologies: [SiHtml5, SiCss3, SiJavascript, SiTailwindcss],
@@ -81,7 +122,7 @@ export const projects = [
     available: true,
   },
   {
-    id: 3,
+    id: 5,
     name: "Tech Store",
     description:
       "TechStore is a simple e-commerce store that showcases and sells tech gadgets.",
@@ -109,7 +150,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 6,
     name: "FIND TREND",
     description: "Minimize your tabs.Find the trends!.",
     technologies: [SiHtml5, SiCss3, SiJavascript],
@@ -125,7 +166,7 @@ export const projects = [
     available: true,
   },
   {
-    id: 5,
+    id: 7,
     name: "CAR DASHBOARD",
     description: "Control panel to know all the details of the car.",
     technologies: [SiHtml5, SiCss3, SiJavascript],
@@ -138,6 +179,25 @@ export const projects = [
     github: "https://github.com/Bodyhc/CarDashboard.git",
     demo: "https://cardas7board.netlify.app/",
     image: "/projects/proj3.png",
+    available: true,
+  },
+  {
+    id: 8,
+    name: "Movie Poster Generator",
+    description: "Movie Poster Generator is a full-stack web application that allows users to generate unique and cinematic movie posters using Generative AI.Just enter a movie title and a brief description, and the app will create a custom poster for you in seconds..",
+    technologies: [SiReact, SiTypescript, SiTailwindcss, SiVite, SiFramer],
+    techNames: ["react ", "typescript","Tailwind CSS","Vite","Framer Motion"],
+    techLinks: [
+      "https://react.dev/",
+      "https://www.typescriptlang.org/",
+      "https://tailwindcss.com/",
+      "https://vite.dev/",
+      "https://www.framer.com/"
+            
+    ],
+    github: "https://github.com/Bodyhc/Movie-Poster-Generator",
+    demo: "https://moviepostergenerate.netlify.app/",
+    image: "/projects/movie.png",
     available: true,
   },
 ];
