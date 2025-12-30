@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
         "Bodyhc - Abdullah is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
     generator: "Next.js",
-    monetag" content="a72bb39e26c9c8a1e18487e857cdd7d7",
+    monetag:"a72bb39e26c9c8a1e18487e857cdd7d7",
     applicationName: "Portfolio template",
     keywords: [
         "Portfolio template",
