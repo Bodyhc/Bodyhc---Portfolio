@@ -10,12 +10,16 @@ const syne = Inter({
 });
 
 export const metadata: Metadata = {
+    verification: {
+        other: {
+            monetag: "a72bb39e26c9c8a1e18487e857cdd7d7",
+        },
+    },
     icons: "logo.png",
     title: "Bodyhc - Abdullah",
     description:
         "Bodyhc - Abdullah is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
     generator: "Next.js",
-    monetag:"a72bb39e26c9c8a1e18487e857cdd7d7",
     applicationName: "Portfolio template",
     keywords: [
         "Portfolio template",
