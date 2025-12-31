@@ -93,6 +93,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <html lang="en">
             <body
                 className={`${syne.className} scroll-smooth scrollbar-none scrollbar-track-[#0E1016] scrollbar-thumb-[#212531]`}>
+                <script src="https://quge5.com/88/tag.min.js" data-zone="197534" async data-cfasync="false"></script>
                 {children}
             </body>
         </html>
