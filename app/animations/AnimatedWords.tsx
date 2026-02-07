@@ -4,10 +4,10 @@ import { useInView } from "react-intersection-observer";
 
 type AnimatedWordsProps = {
   title: string;
-  style: string;
+  className: string;
 };
 
-const AnimatedWords: React.FC<AnimatedWordsProps> = ({ title, style }) => {
+const AnimatedWords: React.FC<AnimatedWordsProps> = ({ title, className }) => {
     const ctrls = useAnimation();
 
     const { ref, inView } = useInView({
@@ -41,7 +41,7 @@ const AnimatedWords: React.FC<AnimatedWordsProps> = ({ title, style }) => {
 
     return (
         <h1 aria-label={title}>
-            <motion.span className={style} ref={ref}>
+            <motion.span className={className} ref={ref}>
                 {title.split(" ").map((word, index) => (
                     <motion.div
                         key={index}

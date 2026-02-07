@@ -4,7 +4,6 @@ import Image from "next/image";
 import AnimatedTitle from "../../animations/AnimatedTitle";
 import AnimatedBody from "../../animations/AnimatedBody";
 import { motion } from "framer-motion";
-import Container from "../container/Container";
 import React from "react";
 import {SiGithub} from "react-icons/si";
 import {BsLink45Deg} from "react-icons/bs";
@@ -22,35 +21,44 @@ const ProjectCard = ({
 }: ProjectProps) => {
     return (
         <motion.div
-            className={`relative bg-cover bg-no-repeat bg-center z-10 h-[550px] w-full items-stretch justify-center py-0 sm:h-[700px] sm:w-[100%] md:h-[650px] md:w-[100%] lg:h-[500px]`}
+            className={`group relative z-10 h-[550px] w-full overflow-hidden rounded-3xl sm:h-[650px] md:h-[600px] lg:h-[550px]`}
             initial="initial"
             animate="animate"
+            whileHover={{ y: -8 }}
+            transition={{ duration: 0.3 }}
         >
-            <Container
-                width="100%"
-                height="100%"
-                borderRadius={25}
-                color="rgba(255, 255, 255, 0.1)"
-                blur={false}
-                grain={true}
-                top="0px"
-                left="0px"
-                angle={0}
-            >
+            {/* Glassmorphism Container */}
+            <div className="absolute inset-0 bg-glass backdrop-blur-xl border border-glass-border rounded-3xl overflow-hidden">
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${
+                    id % 3 === 0 ? 'from-accent-purple/20 via-accent-blue/10 to-transparent' :
+                    id % 3 === 1 ? 'from-accent-pink/20 via-accent-purple/10 to-transparent' :
+                    'from-accent-cyan/20 via-accent-blue/10 to-transparent'
+                } opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                {/* Project Image */}
+                <div className="absolute inset-0 overflow-hidden">
                 <Image
                     src={image}
-                    alt={name}
+                        alt={`${name} project screenshot`}
                     width={500}
                     height={500}
-                    className={`absolute -bottom-2 w-[70%] sm:w-[85%] md:w-[60%] lg:max-w-[55%] ${
-                        id % 2 === 0 ? "right-0" : "left-0"
-                    }`}
-                    priority={true}
+                        className={`absolute transition-transform duration-700 group-hover:scale-110 ${
+                            id % 2 === 0 ? "right-0 bottom-0 w-[70%] sm:w-[75%] md:w-[65%] lg:w-[60%]" : "left-0 bottom-0 w-[70%] sm:w-[75%] md:w-[65%] lg:w-[60%]"
+                        }`}
+                        loading={id < 2 ? "eager" : "lazy"}
+                        priority={id < 2}
                 />
+                    <div className={`absolute inset-0 bg-gradient-to-t from-bg-dark via-bg-dark/80 to-transparent ${
+                        id % 2 === 0 ? 'bg-gradient-to-l' : 'bg-gradient-to-r'
+                    }`} />
+                </div>
+
+                {/* Action Buttons */}
                 <div
-                    className={`absolute top-0 text-[#0E1016] ${
-                        id % 2 === 0 ? "left-0 ml-8 lg:ml-14" : "right-0 mr-8 lg:mr-14"
-                    } mt-6 flex  items-center justify-center gap-4 lg:mt-10`}
+                    className={`absolute top-6 z-20 ${
+                        id % 2 === 0 ? "left-6" : "right-6"
+                    } flex items-center justify-center gap-3`}
                 >
                     {available ? (
                         <>
@@ -58,42 +66,42 @@ const ProjectCard = ({
                                 href={github}
                                 target="_blank"
                                 aria-label="Open GitHub Repository"
-                                className="rounded-full w-[43px] bg-white p-3 md:p-5 text-[20px] md:w-[65px] md:text-[24px] lg:w-[65px] lg:text-[28px]"
+                                className="group/btn relative w-12 h-12 md:w-14 md:h-14 bg-glass backdrop-blur-md border border-glass-border rounded-xl flex items-center justify-center text-text-primary hover:border-accent-purple hover:bg-accent-purple/10 transition-all duration-300 hover:scale-110"
                                 data-blobity
-                                data-blobity-radius="35"
-                                data-blobity-offset-x="4"
-                                data-blobity-offset-y="4"
+                                data-blobity-radius="15"
                                 data-blobity-magnetic="false">
-                                <SiGithub/>
+                                <SiGithub className="text-xl md:text-2xl group-hover/btn:text-accent-purple transition-colors"/>
                             </Link>
                             <Link
                                 href={demo}
                                 target="_blank"
                                 aria-label="Open Live Demo"
-                                className=" w-[43px] rounded-full bg-white p-3 md:p-5 text-[20px] md:w-[65px] md:text-[24px] lg:w-[65px] lg:text-[28px]"
+                                className="group/btn relative w-12 h-12 md:w-14 md:h-14 bg-glass backdrop-blur-md border border-glass-border rounded-xl flex items-center justify-center text-text-primary hover:border-accent-blue hover:bg-accent-blue/10 transition-all duration-300 hover:scale-110"
                                 data-blobity
-                                data-blobity-radius="35"
-                                data-blobity-offset-x="4"
-                                data-blobity-offset-y="4"
+                                data-blobity-radius="15"
                                 data-blobity-magnetic="false">
-                                <BsLink45Deg/>
+                                <BsLink45Deg className="text-xl md:text-2xl group-hover/btn:text-accent-blue transition-colors"/>
                             </Link>
                         </>
                     ) : (
-                        <div></div>
+                        <div className="px-4 py-2 bg-glass backdrop-blur-md border border-glass-border rounded-xl">
+                            <span className="text-sm text-text-muted">Coming Soon</span>
+                        </div>
                     )}
                 </div>
+
+                {/* Content */}
                 <div
-                    className={`absolute text-white  ${
+                    className={`absolute z-10 ${
                         !(id % 2 === 0)
-                            ? "right-0 top-32 mr-0 ml-10 md:right-0 md:ml-0 lg:right-0 lg:top-60  lg:mr-4"
-                            : "left-10 top-32 ml-0 md:mr-12 lg:top-52 lg:ml-4"
-                    } mb-10  md:mb-16 lg:mb-14 `}
+                            ? "right-0 top-32 mr-6 md:right-0 md:mr-8 lg:top-40 lg:mr-12"
+                            : "left-6 top-32 md:left-8 lg:top-40 lg:left-12"
+                    } max-w-[85%] md:max-w-[60%] lg:max-w-[50%]`}
                 >
                     <AnimatedTitle
                         text={name}
                         className={
-                            "max-w-[90%] text-[40px] leading-none text-white md:text-[44px] md:leading-none lg:max-w-[450px] lg:text-[48px] lg:leading-none"
+                            "text-[36px] leading-tight text-text-primary font-bold md:text-[42px] lg:text-[48px] mb-4"
                         }
                         wordSpace={"mr-[0.25em]"}
                         charSpace={"-mr-[0.01em]"}
@@ -101,28 +109,29 @@ const ProjectCard = ({
                     <AnimatedBody
                         text={description}
                         className={
-                            "mt-4 w-[90%] max-w-[457px] text-[16px] font-semibold text-[#95979D] "
+                            "mt-4 text-[15px] font-medium text-text-secondary leading-relaxed md:text-[16px]"
                         }
                     />
-                    <div className="mt-9 mb-9 grid grid-cols-5 gap-5 col-start-1 col-end-2">
-                        {technologies.map((IconComponent, id) => (
-                            <div key={id} className={"relative"}>
+                    
+                    {/* Technologies Grid */}
+                    <div className="mt-8 flex flex-wrap gap-3">
+                        {technologies.map((IconComponent, techId) => (
                                 <Link
-                                    href={techLinks[id]}
+                                key={techId}
+                                href={techLinks[techId]}
                                     target="_blank"
-                                    aria-label={`Learn more about ${techNames[id]}`}
-                                    className="w-[20px] text-[20px] md:w-[25px] md:text-[24px] lg:w-[30px] lg:text-[28px]"
-                                    title={techLinks[id]}
-                                    data-blobity-tooltip={techNames[id]}
+                                aria-label={`Learn more about ${techNames[techId]}`}
+                                className="group/tech relative w-10 h-10 md:w-12 md:h-12 bg-glass backdrop-blur-md border border-glass-border rounded-lg flex items-center justify-center text-text-primary hover:border-accent-purple hover:text-accent-purple hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-purple"
+                                title={techNames[techId]}
+                                data-blobity-tooltip={techNames[techId]}
                                     data-blobity-magnetic="false"
                                 >
-                                    <IconComponent/>
+                                <IconComponent className="text-lg md:text-xl"/>
                                 </Link>
-                            </div>
                         ))}
                     </div>
                 </div>
-            </Container>
+            </div>
         </motion.div>
     );
 };

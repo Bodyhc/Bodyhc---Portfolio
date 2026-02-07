@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { inter } from "../fonts/inter";
 import "../animations/animate.css";
 import AnimatedBody from "../animations/AnimatedBody";
 import AnimatedTitle from "../animations/AnimatedTitle";
-import AnimatedWords from "../animations/AnimatedWords";
 import { motion } from "framer-motion";
 import ContactBackground from "../components/background/ContactBackground";
 import React from "react";
@@ -11,50 +9,71 @@ import React from "react";
 const Contact = () => {
     return (
         <motion.section
-            className="relative z-10 flex h-[85vh] w-full items-center justify-center overflow-hidden py-16 md:h-[80vh] md:py-20 lg:h-[90vh] lg:pt-0 lg:pb-28"
+            className="relative z-10 flex min-h-[85vh] w-full items-center justify-center overflow-hidden py-20 md:min-h-[80vh] md:py-24 lg:min-h-[90vh] lg:pt-0 lg:pb-32"
             id="contact"
             initial="initial"
             animate="animate">
             <ContactBackground />
-            <div className="mx-auto  flex w-[90%] flex-col items-center justify-center pt-10 md:pt-0">
-                <div
-                    className={`flex flex-col items-start justify-center ${inter.className} relative w-full sm:items-center lg:max-w-[1440px] `}>
-                    <AnimatedWords
-                        title={"contact"}
-                        style={
-                            "flex max-w-[250px] flex-col items-start text-left text-[100px] font-extrabold uppercase leading-[0.9em] text-[#e4ded7] sm:max-w-full sm:flex-row sm:items-center sm:justify-center sm:text-center sm:text-[150px] md:text-[150px] lg:text-center lg:text-[120px] xl:text-[250px]"
-                        }
-                    />
+            
+            {/* Animated Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-pink/10 to-transparent" />
+            
+            <div className="relative z-10 w-full flex flex-col items-center">
+                <div className="mb-12 md:mb-16 lg:mb-20">
+                    <h2 className="text-center text-[36px] font-bold leading-[1.1em] bg-gradient-to-r from-text-primary via-accent-pink to-text-primary bg-clip-text text-transparent md:text-[48px] lg:text-[64px]">
+                        Get In Touch
+                    </h2>
+                    <p className="mt-4 text-center text-text-primary text-sm md:text-base lg:text-lg opacity-90">
+                        Let's build something amazing together
+                    </p>
                 </div>
 
-                <div className="mt-20 flex w-full flex-col items-end justify-center gap-16 sm:mt-32 sm:gap-12 md:mt-40 md:flex-row md:items-start md:justify-between lg:mt-12 lg:max-w-[1440px]">
-                    <div className=" flex w-[350px] max-w-[90%] flex-col items-end text-right text-[14px] font-semibold uppercase text-[#e4ded7] sm:w-[350px] sm:text-[14px] md:w-[310px] md:items-start md:text-left md:text-[16px] lg:w-[420px] lg:text-[16px]">
-                        <AnimatedBody
-                            text={
-                                "Got a question, proposal, project, or want to work together on something?"
-                            }
-                            className={
-                                "-mb-1 inline-block overflow-hidden pt-1 sm:-mb-2 md:-mb-3 lg:-mb-4"
-                            }
-                        />
+                <div className="flex w-full flex-col items-center justify-center gap-12 sm:gap-16 md:flex-row md:items-start md:justify-between md:gap-8 lg:gap-12">
+                    {/* Email Section */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="relative bg-glass backdrop-blur-xl border border-glass-border rounded-3xl p-8 md:p-10 lg:p-12 shadow-glass max-w-md w-full"
+                    >
+                        <h3 className="text-xl font-bold text-text-primary mb-4 md:text-2xl">
+                            Have a project in mind?
+                        </h3>
+                        <p className="text-text-primary mb-6 text-sm md:text-base opacity-90">
+                            Got a question, proposal, project, or want to work together on something?
+                        </p>
                         <Link
                             href="mailto:abdullahsliman920@gmail.com?subject=Lets%20work%20together!"
                             target="_blank"
                             aria-label="Send me an email"
-                            className="mt-1 w-[147px] flex-1 underline underline-offset-2 hover:no-underline sm:mt-2 sm:w-[147px] md:mt-3 md:w-[170px] lg:mt-4">
-                            <AnimatedBody text={"Send me an email"} className={""} />
+                            className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-accent-purple to-accent-pink rounded-xl text-text-primary font-semibold hover:shadow-glow-pink transition-all duration-300 hover:scale-105"
+                            data-blobity
+                            data-blobity-radius="15"
+                            data-blobity-magnetic="false">
+                            <span>Send me an email</span>
+                            <span className="group-hover:translate-x-1 transition-transform">→</span>
                         </Link>
-                    </div>
+                    </motion.div>
 
-                    <div className="flex gap-10 text-[16px] font-bold text-[#e4ded7]  sm:gap-14 sm:text-[24px] md:gap-10 md:text-[16px] lg:gap-20 lg:text-[28px]">
+                    {/* Social Links */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="flex flex-wrap gap-4 justify-center md:justify-end"
+                    >
                         <Link
                             href="https://github.com/Bodyhc"
                             target="_blank"
-                            aria-label="View GitHub Profile">
+                            aria-label="View GitHub Profile"
+                            className="group relative px-6 py-4 bg-glass backdrop-blur-md border border-glass-border rounded-xl hover:border-accent-purple transition-all duration-300 hover:shadow-glow-purple hover:scale-105"
+                            data-blobity
+                            data-blobity-radius="15"
+                            data-blobity-magnetic="false">
                             <AnimatedTitle
                                 text={"GITHUB"}
                                 className={
-                                    "text-[16px] font-bold text-[#e4ded7] sm:text-[20px] md:text-[16px] lg:text-[28px]"
+                                    "text-[14px] font-bold text-text-primary group-hover:text-accent-purple transition-colors md:text-[16px]"
                                 }
                                 wordSpace={"mr-[0.25em]"}
                                 charSpace={"mr-[0.01em]"}
@@ -63,11 +82,15 @@ const Contact = () => {
                         <Link
                             href="https://www.linkedin.com/in/abdullahsoliman/"
                             target="_blank"
-                            aria-label="View linkedin Profile">
+                            aria-label="View linkedin Profile"
+                            className="group relative px-6 py-4 bg-glass backdrop-blur-md border border-glass-border rounded-xl hover:border-accent-blue transition-all duration-300 hover:shadow-glow-blue hover:scale-105"
+                            data-blobity
+                            data-blobity-radius="15"
+                            data-blobity-magnetic="false">
                             <AnimatedTitle
-                                text={"LINKEDIN "}
+                                text={"LINKEDIN"}
                                 className={
-                                    "text-[16px] font-bold text-[#e4ded7] sm:text-[20px] md:text-[16px] lg:text-[28px]"
+                                    "text-[14px] font-bold text-text-primary group-hover:text-accent-blue transition-colors md:text-[16px]"
                                 }
                                 wordSpace={"mr-[0.25em]"}
                                 charSpace={"mr-[0.01em]"}
@@ -76,11 +99,15 @@ const Contact = () => {
                         <Link
                             href="https://www.instagram.com/vbdullvh_m_solimvn/"
                             target="_blank"
-                            aria-label="View instgram Profile">
+                            aria-label="View instgram Profile"
+                            className="group relative px-6 py-4 bg-glass backdrop-blur-md border border-glass-border rounded-xl hover:border-accent-pink transition-all duration-300 hover:shadow-glow-pink hover:scale-105"
+                            data-blobity
+                            data-blobity-radius="15"
+                            data-blobity-magnetic="false">
                             <AnimatedTitle
-                                text={"INSTGRAM "}
+                                text={"INSTAGRAM"}
                                 className={
-                                    "text-[16px] font-bold text-[#e4ded7] sm:text-[20px] md:text-[16px] lg:text-[28px]"
+                                    "text-[14px] font-bold text-text-primary group-hover:text-accent-pink transition-colors md:text-[16px]"
                                 }
                                 wordSpace={"mr-[0.25em]"}
                                 charSpace={"mr-[0.01em]"}
@@ -89,17 +116,21 @@ const Contact = () => {
                         <Link
                             href="https://uiverse.io/profile/Bodyhc"
                             target="_blank"
-                            aria-label="View UiVerse Profile">
+                            aria-label="View UiVerse Profile"
+                            className="group relative px-6 py-4 bg-glass backdrop-blur-md border border-glass-border rounded-xl hover:border-accent-cyan transition-all duration-300 hover:shadow-glow-blue hover:scale-105"
+                            data-blobity
+                            data-blobity-radius="15"
+                            data-blobity-magnetic="false">
                             <AnimatedTitle
-                                text={"UIVERSE "}
+                                text={"UIVERSE"}
                                 className={
-                                    "text-[16px] font-bold text-[#e4ded7] sm:text-[20px] md:text-[16px] lg:text-[28px]"
+                                    "text-[14px] font-bold text-text-primary group-hover:text-accent-cyan transition-colors md:text-[16px]"
                                 }
                                 wordSpace={"mr-[0.25em]"}
                                 charSpace={"mr-[0.01em]"}
                             />
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </motion.section>

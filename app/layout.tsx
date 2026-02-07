@@ -2,6 +2,7 @@ import "./globals.css";
 import React, { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import StructuredData from "./components/seo/StructuredData";
 
 const syne = Inter({
     subsets: ["latin"],
@@ -10,15 +11,10 @@ const syne = Inter({
 });
 
 export const metadata: Metadata = {
-    verification: {
-        other: {
-            monetag: "a72bb39e26c9c8a1e18487e857cdd7d7",
-        },
-    },
     icons: "logo.png",
-    title: "Bodyhc - Abdullah",
+    title: "Abdullah Soliman - Front-End Developer Portfolio",
     description:
-        "Bodyhc - Abdullah is a portfolio template built with React, Typescript, Tailwind CSS, and Framer Motion. 100% open-source, and customizable.",
+        "Front-End Developer and Full-Stack Enthusiast. Specialized in React, Next.js, TypeScript, and modern web technologies. Check out my projects and get in touch!",
     generator: "Next.js",
     applicationName: "Portfolio template",
     keywords: [
@@ -91,10 +87,12 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en">
+            <head>
+                <StructuredData />
+            </head>
             <body
                 className={`${syne.className} scroll-smooth scrollbar-none scrollbar-track-[#0E1016] scrollbar-thumb-[#212531]`}>
                 {children}
-<script src="https://quge5.com/88/tag.min.js" data-zone="197534" async data-cfasync="false"></script>
             </body>
         </html>
     );

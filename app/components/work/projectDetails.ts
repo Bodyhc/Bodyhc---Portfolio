@@ -200,4 +200,36 @@ export const projects = [
     image: "/projects/movie.png",
     available: true,
   },
+  {
+    id: 9,
+    name: "BlazeUI",
+    description: "A beautiful, modern, and accessible component library for React built with Radix UI and Tailwind CSS.",
+    technologies: [SiReact, SiTypescript, SiTailwindcss],
+    techNames: ["React", "TypeScript", "Tailwind CSS"],
+    techLinks: [
+      "https://react.dev/",
+      "https://www.typescriptlang.org/",
+      "https://tailwindcss.com/",
+    ],
+    github: "https://github.com/Bodyhc/BlazeUI",
+    demo: "https://blazeui.netlify.app/",
+    image: "/projects/blaze.png",
+    available: true,
+  },
+  {
+    id: 10, // Increment this number for each new project
+    name: "DevFolio Jobs",
+    description: "Turn your skills into a job-ready portfolio in minutes",
+    technologies: [SiReact, SiTypescript, SiTailwindcss], // Add icons from react-icons/si
+    techNames: ["React", "TypeScript", "Tailwind CSS"], // Names matching technologies array
+    techLinks: [
+      "https://react.dev/",
+      "https://www.typescriptlang.org/",
+      "https://tailwindcss.com/",
+    ], // Links matching technologies array
+    github: "https://github.com/bodyhc",
+    demo: "https://devfoliojobs.netlify.app/",
+    image: "/projects/devfolio.png", // Add image to public/projects/ folder
+    available: true, // Set to false if project is not ready yet
+  },
 ];
