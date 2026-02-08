@@ -38,7 +38,7 @@ const Tools = () => {
             <div className="relative z-10 w-full flex flex-col items-center">
                 <div className="mb-12 md:mb-16 lg:mb-20">
                     <h2 className="text-center text-[36px] font-bold leading-[1.1em] bg-gradient-to-r from-text-primary via-accent-blue to-text-primary bg-clip-text text-transparent md:text-[48px] lg:text-[64px]">
-                        Tools I'm Using
+                        Tools I&apos;m Using
                     </h2>
                     <p className="mt-4 text-center text-text-primary text-sm md:text-base lg:text-lg opacity-90">
                         Technologies and tools I work with
