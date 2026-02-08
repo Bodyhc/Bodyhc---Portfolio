@@ -3,9 +3,8 @@ import "../animations/animate.css";
 import AnimatedBody from "../animations/AnimatedBody";
 import {
     SiGit,
-    SiGithub,SiPostgresql,SiMysql,
+    SiGithub,SiMysql,
     SiJavascript, SiNextdotjs, SiReact, SiTypescript,
-    SiMongodb,
     SiNodedotjs,
     SiHtml5,
     SiCss3,

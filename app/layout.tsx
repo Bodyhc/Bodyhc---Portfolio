@@ -11,6 +11,7 @@ const syne = Inter({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://portfolio-bodyhc.netlify.app/"),
     icons: "logo.png",
     title: "Abdullah Soliman - Front-End Developer Portfolio",
     description:
