@@ -1,7 +1,7 @@
 import { ProjectProps } from "./projectDetails";
 import Link from "next/link";
 import Image from "next/image";
-import AnimatedTitle from "../../animations/AnimatedTitle";
+import AnimatedTitle from "../../animations/AnimatedTitleText";
 import AnimatedBody from "../../animations/AnimatedBody";
 import { motion } from "framer-motion";
 import React from "react";
