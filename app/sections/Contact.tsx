@@ -1,7 +1,7 @@
 import Link from "next/link";
 import "../animations/animate.css";
 import AnimatedBody from "../animations/AnimatedBody";
-import AnimatedTitle from "../animations/AnimatedTitle";
+import AnimatedTitle from "../animations/AnimatedTitleText";
 import { motion } from "framer-motion";
 import ContactBackground from "../components/background/ContactBackground";
 import React from "react";

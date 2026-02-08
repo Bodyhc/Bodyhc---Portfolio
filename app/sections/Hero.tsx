@@ -3,7 +3,7 @@ import { inter } from "../fonts/inter";
 import { motion } from "framer-motion";
 import HeroBackground from "../components/background/HeroBackground";
 import React from "react";
-import AnimatedTitle from "../animations/AnimatedTitle";
+import AnimatedTitle from "../animations/AnimatedTitleText";
 
 const Hero = () => {
   return (
