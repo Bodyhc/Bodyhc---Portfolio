@@ -114,6 +114,23 @@ const Contact = () => {
                             />
                         </Link>
                         <Link
+                            href="https://wa.me/201029946946"
+                            target="_blank"
+                            aria-label="Message me on WhatsApp"
+                            className="group relative px-6 py-4 bg-glass backdrop-blur-md border border-glass-border rounded-xl hover:border-green-500 transition-all duration-300 hover:shadow-glow-green hover:scale-105"
+                            data-blobity
+                            data-blobity-radius="15"
+                            data-blobity-magnetic="false">
+                            <AnimatedTitle
+                                text={"WHATSAPP"}
+                                className={
+                                    "text-[14px] font-bold text-text-primary group-hover:text-green-500 transition-colors md:text-[16px]"
+                                }
+                                wordSpace={"mr-[0.25em]"}
+                                charSpace={"mr-[0.01em]"}
+                            />
+                        </Link>
+                        <Link
                             href="https://uiverse.io/profile/Bodyhc"
                             target="_blank"
                             aria-label="View UiVerse Profile"

@@ -110,6 +110,23 @@ const Hero = () => {
               charSpace={"mr-[0.01em]"}
             />
           </Link>
+          <Link
+            href="https://wa.me/201029946946"
+            target="_blank"
+            aria-label="Message me on WhatsApp"
+            className="group relative px-6 py-3 bg-glass backdrop-blur-md border border-glass-border rounded-xl hover:border-green-500 transition-all duration-300 hover:shadow-glow-green"
+            data-blobity
+            data-blobity-radius="15"
+            data-blobity-magnetic="false">
+            <AnimatedTitle
+              text={"WHATSAPP"}
+              className={
+                "text-[14px] font-bold text-text-primary group-hover:text-green-500 transition-colors sm:text-[16px] md:text-[18px]"
+              }
+              wordSpace={"mr-[0.25em]"}
+              charSpace={"mr-[0.01em]"}
+            />
+          </Link>
         </motion.div>
       </div>
     </motion.section>
